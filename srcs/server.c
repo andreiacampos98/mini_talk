@@ -15,8 +15,13 @@
 
 int main()
 {
-    pid_t   pid;
+    pid_t				pid;
+    struct sigaction	s_sigaction;
 
     pid = getpid();
     ft_printf("The server PID: %i", pid);
+    s_sigaction.sa_sigaction = action;
+	s_sigaction.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &s_sigaction, 0);
+	sigaction(SIGUSR2, &s_sigaction, 0);
 }

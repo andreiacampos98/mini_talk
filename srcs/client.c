@@ -58,7 +58,6 @@ int	main(int argc, char **argv)
 		handle_error("Invalid message");
 	pid_received = ft_atoi(argv[1]);
 	ft_send_message(pid_received, argv[2]);
-	
 	return (0);
 	
 }
