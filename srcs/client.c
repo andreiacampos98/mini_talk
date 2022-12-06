@@ -6,13 +6,13 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:49 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/06 21:10:43 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:12:40 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/mini_talk.h"
 
-void	handle_errors(char *error_msg)
+void	handle_error(char *error_msg)
 {
 	write(STDERR_FILENO, "Error: ", 7);
 	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
@@ -50,10 +50,10 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	if (argc != 3)
-		handle_errors("Invalid number of arguments");
+		handle_error("Invalid number of arguments");
 	while (argv[1][i])
-		if (!ft_is_digit(argv[1][i++]))
-			handle_errors("PID is not a number");
+		if (!ft_isdigit(argv[1][i++]))
+			handle_error("PID is not a number");
 	if (argv[2] == 0)
 		handle_error("Invalid message");
 	pid_received = ft_atoi(argv[1]);

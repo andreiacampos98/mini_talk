@@ -6,7 +6,7 @@
 #    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 18:44:22 by anaraujo          #+#    #+#              #
-#    Updated: 2022/12/06 22:01:05 by anaraujo         ###   ########.fr        #
+#    Updated: 2022/12/06 22:14:01 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
 
 all: $(SERVER) $(CLIENT)
+
 $(LIBFT) :
 		$(MAKE) -C ./libft
 $(SERVER): $(SERVER_OBJS)  $(LIBFT)
