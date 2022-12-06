@@ -6,11 +6,11 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:49 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/05 21:12:18 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/06 21:10:43 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/mini_talk.h"
+#include "../includes/mini_talk.h"
 
 void	handle_errors(char *error_msg)
 {
@@ -54,10 +54,9 @@ int	main(int argc, char **argv)
 	while (argv[1][i])
 		if (!ft_is_digit(argv[1][i++]))
 			handle_errors("PID is not a number");
-	if (argv[2] = 0)
+	if (argv[2] == 0)
 		handle_error("Invalid message");
 	pid_received = ft_atoi(argv[1]);
 	ft_send_message(pid_received, argv[2]);
 	return (0);
-	
 }

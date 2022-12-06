@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf_utils.c                                :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:32:32 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/01 17:23:14 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/06 21:14:03 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_puthex_ptr(unsigned long long  value, int *l)
+void	ft_puthex_ptr(unsigned long long value, int *l)
 {
 	if (value > 15)
 	{

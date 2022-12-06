@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:49:51 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/11/19 15:25:53 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/06 21:14:44 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	ft_bzero(void *s, size_t n)
 	s = ptr;
 }
 
-int main()
+/*int main()
 {
     char buffer[10] ="Andreia";
  
     ft_bzero(&buffer, 10);
     printf("\nImprimir: %s\n", buffer);
     return (0);
-}
+}*/
