@@ -6,7 +6,7 @@
 #    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:39:13 by marvin            #+#    #+#              #
-#    Updated: 2022/12/06 22:15:29 by anaraujo         ###   ########.fr        #
+#    Updated: 2022/12/07 21:12:46 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,13 +62,13 @@ SRC = ./ft_atoi.c			\
 		./ft_putstr.c		\
 		./ft_putptr.c		\
 		./get_next_line.c	\
-		./get_next_line_bonus.c
+		./get_next_line_bonus.c\
+		./handle_errors.c
 
 OBJS = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
-
 CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

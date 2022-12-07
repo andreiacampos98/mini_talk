@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_talk.h                                        :+:      :+:    :+:   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 18:10:56 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/07 21:13:27 by anaraujo         ###   ########.fr       */
+/*   Created: 2022/12/07 21:10:07 by anaraujo          #+#    #+#             */
+/*   Updated: 2022/12/07 21:11:14 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_TALK_H
-# define MINI_TALK_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <signal.h>
-
-#endif
+void	handle_errors(char *error_msg)
+{
+	write(STDERR_FILENO, "Error: ", 7);
+	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
+	write(STDERR_FILENO, "\n", 1);
+	exit(EXIT_FAILURE);
+}
