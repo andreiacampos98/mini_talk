@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:49 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/07 21:53:47 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/07 23:31:33 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,17 @@ void	ft_send_message(pid_t pid_received, char *message)
 	}
 }
 
+void	handler(int signum)
+{
+	if (signum == SIGUSR1)
+		write(1, "Character has been sucessfully received!\n", 42);
+}
+
+
 int	main(int argc, char **argv)
 {
 	pid_t	pid_received;
+	struct sigaction	s_sigaction;
 	int		i;
 
 	i = 0;
@@ -49,6 +57,10 @@ int	main(int argc, char **argv)
 	if (argv[2] == 0)
 		handle_errors("Invalid message");
 	pid_received = ft_atoi(argv[1]);
+	s_sigaction.sa_handler = &handler;
+	s_sigaction.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &s_sigaction, NULL);
+	sigaction(SIGUSR2, &s_sigaction, NULL);
 	ft_send_message(pid_received, argv[2]);
 	return (EXIT_SUCCESS);
 }
