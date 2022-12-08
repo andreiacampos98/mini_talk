@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 18:21:49 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/07 23:31:33 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/08 09:04:13 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ void	handler(int signum)
 		write(1, "Character has been sucessfully received!\n", 42);
 }
 
-
 int	main(int argc, char **argv)
 {
-	pid_t	pid_received;
+	pid_t				pid_received;
 	struct sigaction	s_sigaction;
-	int		i;
+	int					i;
 
 	i = 0;
 	if (argc != 3)
